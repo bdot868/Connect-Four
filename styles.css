@@ -1,0 +1,34 @@
+
+
+.container {
+  border: 2px solid black;
+  margin: auto;
+  height: 400px;
+  width: 400px;
+  padding: 2px;
+}
+
+.boxes {
+  border: 1px solid black;
+  height: 195px;
+  width: 195px;
+  display: inline-block;
+  vertical-align: top;
+  background: yellow;
+}
+
+.circle {
+  height: 175px;
+  width: 175px;
+  border: 1px solid black;
+  margin-left: 8px;
+  margin-top: 8px;
+  border-radius: 100px;
+  background: white;
+}
+
+img {
+  width: 150px;
+  margin: 10px 0 0 10px;
+
+}
