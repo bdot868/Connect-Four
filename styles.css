@@ -1,4 +1,11 @@
+header {
+  margin: 0 auto;
+}
 
+.board {
+  background: url('rajon-rondo-connect-four_crop_north.jpg');
+  background-size: cover;
+}
 
 .container {
   border: 2px solid black;
