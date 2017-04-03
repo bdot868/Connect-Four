@@ -10,7 +10,7 @@ var players = {
 }
 
 
-
+gameDefault()
 /*I want to allow the first user to pick their color of choice & and make the
 2nd color default to the 2nd color*/
 start.on('click', gameStart)
@@ -31,6 +31,7 @@ function gameQuit() {
   if(window.confirm('Are you sure you want to quit?')){
     gameDefault()
   }
+
 }
 
 function gameDefault(){
@@ -38,6 +39,7 @@ function gameDefault(){
     destinationBox[i].innerHTML = ''
     currentPlayer = null
   }
+  destinationBox.off()
 
 }
 
@@ -55,16 +57,19 @@ function gameDefault(){
 
    function gamePlay(){
      destinationBox.on('click', function(){
-       $(this).innerHTML = currentPlayer
+       $(this).html(currentPlayer)
+       winnerIs()
      })
-     destinationBox.on('click', winnerIs)
-    //  for (var i = 0; i < destinationBox.length; i++) {
+    //  destinationBox.on('click', winnerIs)
+   
+
+    //   for (var i = 0; i < destinationBox.length; i++) {
     //    destinationBox[i].addEventListener('click', function(){
     //      this.innerHTML = currentPlayer
-      //  })
-      //  destinationBox[i].addEventListener('click', winnerIs)
-     }
-   //}
+    //    })
+    //    destinationBox[i].addEventListener('click', winnerIs)
+    // }
+   }
 
    //I will create functions to toggle between the players to alternate turns
    function switchTurns(){
@@ -80,7 +85,7 @@ function gameDefault(){
    function winnerIs(){
      if(destinationBox[0].innerHTML !== ''){
        if(destinationBox[0].innerHTML == destinationBox[1].innerHTML || destinationBox[0].innerHTML == destinationBox[2].innerHTML){
-         console.log( currentPlayer + 'You won!')
+         console.log('You won!')
        }
      }
      switchTurns()
