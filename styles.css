@@ -10,23 +10,23 @@ header {
 .container {
   border: 2px solid black;
   margin: auto;
-  height: 400px;
-  width: 400px;
+  max-height: 750px;
+  max-width: 809px;
   padding: 2px;
 }
 
 .boxes {
   border: 1px solid black;
-  height: 195px;
-  width: 195px;
+  /*height: 195px;
+  width: 195px;*/
   display: inline-block;
   vertical-align: top;
   background: yellow;
 }
 
 .circle {
-  height: 175px;
-  width: 175px;
+  height: 100px;
+  width: 100px;
   border: 1px solid black;
   margin-left: 8px;
   margin-top: 8px;
@@ -35,7 +35,7 @@ header {
 }
 
 img {
-  width: 150px;
+  width: 80px;
   margin: 10px 0 0 10px;
 
 }

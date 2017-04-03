@@ -9,6 +9,10 @@ var players = {
   black: '<img src="black piece.jpg">'
 }
 
+var horizontal = [[0,1,2,3,4,5,6], [7,8,9,10,11,12,13], [14,15,16,17,18,19,20], [21,22,23,24,25,26,27], [28,29,30,31,32,33,34], [35,36,37,38,39,40,41]]
+var vertical = [[destinationBox[1]], [], [], [], [], [], []]
+var diagonal = [[], [], [], [], [], [],
+                [], [], [], [], [], []]
 
 gameDefault()
 /*I want to allow the first user to pick their color of choice & and make the
@@ -61,7 +65,7 @@ function gameDefault(){
        winnerIs()
      })
     //  destinationBox.on('click', winnerIs)
-   
+
 
     //   for (var i = 0; i < destinationBox.length; i++) {
     //    destinationBox[i].addEventListener('click', function(){
@@ -83,10 +87,21 @@ function gameDefault(){
    //I will create a function that will check every time a piece is placed if
    //there is a winner by seeing if anybody has four in a row
    function winnerIs(){
-     if(destinationBox[0].innerHTML !== ''){
-       if(destinationBox[0].innerHTML == destinationBox[1].innerHTML || destinationBox[0].innerHTML == destinationBox[2].innerHTML){
-         console.log('You won!')
+     for (var i = 0; i < destinationBox.length; i++) {
+       if(destinationBox[i].innerHTML !== ''){
+         if((destinationBox[i].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer && destinationBox[i+2].innerHTML == currentPlayer && destinationBox[i+3].innerHTML == currentPlayer) ||
+            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer && destinationBox[i-2].innerHTML == currentPlayer && destinationBox[i-3].innerHTML == currentPlayer) ||
+            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer && destinationBox[i+2].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer) ||
+            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer && destinationBox[i-2].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer) ||
+
+            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+7].innerHTML == currentPlayer && destinationBox[i+14].innerHTML == currentPlayer && destinationBox[i+21].innerHTML == currentPlayer) ||
+
+            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+8].innerHTML == currentPlayer && destinationBox[i+16].innerHTML == currentPlayer && destinationBox[i+24].innerHTML == currentPlayer) ||
+          (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+6].innerHTML == currentPlayer && destinationBox[i+12].innerHTML == currentPlayer && destinationBox[i+18].innerHTML == currentPlayer)){
+        	console.log('winner')
+        }
        }
+       //switchTurns()
      }
      switchTurns()
    }
