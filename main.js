@@ -88,21 +88,34 @@ function gameDefault(){
    //there is a winner by seeing if anybody has four in a row
    function winnerIs(){
      for (var i = 0; i < destinationBox.length; i++) {
-       if(destinationBox[i].innerHTML !== ''){
-         if((destinationBox[i].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer && destinationBox[i+2].innerHTML == currentPlayer && destinationBox[i+3].innerHTML == currentPlayer) ||
-            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer && destinationBox[i-2].innerHTML == currentPlayer && destinationBox[i-3].innerHTML == currentPlayer) ||
-            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer && destinationBox[i+2].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer) ||
-            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer && destinationBox[i-2].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer) ||
+          if(destinationBox[i].innerHTML !== ''){
+            if(i >= 0 && i <= 20){
+                 if((destinationBox[i].innerHTML == currentPlayer && destinationBox[i+7].innerHTML == currentPlayer && destinationBox[i+14].innerHTML == currentPlayer && destinationBox[i+21].innerHTML == currentPlayer) ||
+                    (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+8].innerHTML == currentPlayer && destinationBox[i+16].innerHTML == currentPlayer && destinationBox[i+24].innerHTML == currentPlayer) ||
+                    (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+6].innerHTML == currentPlayer && destinationBox[i+12].innerHTML == currentPlayer && destinationBox[i+18].innerHTML == currentPlayer)){
+                      console.log('it had to come to this - diagonal or vertical')
 
-            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+7].innerHTML == currentPlayer && destinationBox[i+14].innerHTML == currentPlayer && destinationBox[i+21].innerHTML == currentPlayer) ||
-
-            (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+8].innerHTML == currentPlayer && destinationBox[i+16].innerHTML == currentPlayer && destinationBox[i+24].innerHTML == currentPlayer) ||
-          (destinationBox[i].innerHTML == currentPlayer && destinationBox[i+6].innerHTML == currentPlayer && destinationBox[i+12].innerHTML == currentPlayer && destinationBox[i+18].innerHTML == currentPlayer)){
-        	console.log('winner')
-        }
-       }
-       //switchTurns()
-     }
+                   }
+                 } else if(i >= 2 & i <= 40){
+                     if(destinationBox[i].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer && destinationBox[i-2].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer){
+                       console.log('I won horizontal')
+                     }
+                 } else if(i >= 1 && i <= 39){
+                     if(destinationBox[i].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer && destinationBox[i+2].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer){
+                       console.log('I won horizontal')
+                     }
+                 } else if(i <= 38 && i >= 0){
+                     if(destinationBox[i].innerHTML == currentPlayer && destinationBox[i+1].innerHTML == currentPlayer && destinationBox[i+2].innerHTML == currentPlayer && destinationBox[i+3].innerHTML == currentPlayer){
+                       console.log('I won hun')
+                     }
+                 } else if(i >= 3){
+              if(destinationBox[i].innerHTML == currentPlayer && destinationBox[i-1].innerHTML == currentPlayer && destinationBox[i-2].innerHTML == currentPlayer && destinationBox[i-3].innerHTML == currentPlayer){
+                  console.log('winning is what i do!')
+                  
+                }
+              }
+            }
+      }
      switchTurns()
    }
 

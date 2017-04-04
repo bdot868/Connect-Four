@@ -1,5 +1,10 @@
 header {
-  margin: 0 auto;
+  height: 100px;
+  text-align: center;
+}
+header img {
+  width: 250px;
+  margin-bottom: 5px
 }
 
 .board {
@@ -11,25 +16,26 @@ header {
   border: 2px solid black;
   margin: auto;
   max-height: 750px;
-  max-width: 809px;
+  max-width: 780px;
   padding: 2px;
 }
 
 .boxes {
   border: 1px solid black;
-  /*height: 195px;
-  width: 195px;*/
+  height: 110px;
+  width: 110px;
   display: inline-block;
   vertical-align: top;
   background: yellow;
+  margin: 0 -2px;
 }
 
 .circle {
   height: 100px;
   width: 100px;
   border: 1px solid black;
-  margin-left: 8px;
-  margin-top: 8px;
+  margin-left: 4px;
+  margin-top: 4px;
   border-radius: 100px;
   background: white;
 }
@@ -38,4 +44,8 @@ img {
   width: 80px;
   margin: 10px 0 0 10px;
 
+}
+
+.pieces {
+  display: grid;
 }
