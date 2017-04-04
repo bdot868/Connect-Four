@@ -8,7 +8,6 @@ var pieces = [
   {marker: '<img src="red piece.jpg" alt="">', color: 'Red'},
   {marker: '<img src="black piece.jpg">', color: 'Black'}
 ]
-var $body = $('body')
 
 gameDefault()
 /*I want to allow the first user to pick their color of choice & and make the
@@ -99,20 +98,19 @@ function gameDefault(){
                    }
                  } else if(i >= 2 & i <= 40){
                      if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i-1].innerHTML == currentPlayer.marker && destinationBox[i-2].innerHTML == currentPlayer.marker && destinationBox[i+1].innerHTML == currentPlayer.marker){
-                       console.log(currentPlayer.color + ' won horizontal')
+                       winnerIs()
                      }
                  } else if(i >= 1 && i <= 39){
                      if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+1].innerHTML == currentPlayer.marker && destinationBox[i+2].innerHTML == currentPlayer.marker && destinationBox[i-1].innerHTML == currentPlayer.marker){
-                       console.log(currentPlayer.color + ' won horizontal')
+                       winnerIs()
                      }
                  } else if(i <= 38 && i >= 0){
                      if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+1].innerHTML == currentPlayer.marker && destinationBox[i+2].innerHTML == currentPlayer.marker && destinationBox[i+3].innerHTML == currentPlayer.marker){
-                       console.log(currentPlayer.color + ' won hun')
+                      winnerIs()
                      }
                  } else if(i >= 3){
               if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i-1].innerHTML == currentPlayer.marker && destinationBox[i-2].innerHTML == currentPlayer.marker && destinationBox[i-3].innerHTML == currentPlayer.marker){
-                  console.log('winning is ' + currentPlayer.color)
-
+                  winnerIs()
                 }
               }
             }
@@ -125,5 +123,21 @@ function gameDefault(){
    //create verticle win, diagonal win, horizontal win
 function winnerIs(){
   var winner = $('<h1>' + currentPlayer.color + ' Wins!</h1>').css({'color': currentPlayer.color, 'font-size': '100px', 'z-index': 100, 'left': '288px', 'position': 'absolute', 'margin-bottom': '400px', 'bottom': 0})
-  $('.container').append(winner)
+  $('body').append(winner)
+  $('.board').css('opacity', '.5')
+  destinationBox.off()
+  var playAgain = setInterval(function(){
+    if(window.confirm('Would you like to Play Again?')){
+      destinationBox.empty()
+      $('h1').empty()
+      $('.board').css('opacity', '1')
+      switchTurns()
+      gamePlay()
+    } else {
+      gameQuit()
+      $('h1').empty()
+      $('.board').css('opacity', '1')
+    }
+    clearInterval(playAgain)
+  },3000)
 }

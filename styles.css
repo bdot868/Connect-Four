@@ -15,7 +15,6 @@ header img {
 }
 
 .container {
-  border: 2px solid black;
   margin: auto;
   max-height: 750px;
   max-width: 780px;
@@ -35,7 +34,7 @@ header img {
 .circle {
   height: 100px;
   width: 100px;
-  border: 1px solid black;
+  border: 1px solid #FFC107;
   margin-left: 4px;
   margin-top: 4px;
   border-radius: 100px;
@@ -55,7 +54,7 @@ div img {
   /*animation: 3s slidein;*/
     /*  background-color: red;
       position: relative;
-      -webkit-animation-name: example; /* 
+      -webkit-animation-name: example; /*
       -webkit-animation-duration: 4s;
       animation-name: example;
       animation-duration: 4s;
