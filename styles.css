@@ -10,6 +10,8 @@ header img {
 .board {
   background: url('rajon-rondo-connect-four_crop_north.jpg');
   background-size: cover;
+  z-index: 0;
+  position: relative;
 }
 
 .container {
@@ -21,7 +23,7 @@ header img {
 }
 
 .boxes {
-  border: 1px solid black;
+  border: 1px solid #BFBF3F;
   height: 110px;
   width: 110px;
   display: inline-block;
@@ -40,12 +42,48 @@ header img {
   background: white;
 }
 
-img {
-  width: 80px;
-  margin: 10px 0 0 10px;
+div img {
+  width: 100px;
+  border-radius: 110px;
+  /*iteration-count | direction | fill-mode | play-state | name
+  animation: 3s ease-in 1s 2 reverse both paused slidein;
 
-}
+  /* @keyframes duration | timing-function | delay | name */
+  /*animation: 3s linear 1s slidein;
+
+  /* @keyframes duration | name */
+  /*animation: 3s slidein;*/
+    /*  background-color: red;
+      position: relative;
+      -webkit-animation-name: example; /* 
+      -webkit-animation-duration: 4s;
+      animation-name: example;
+      animation-duration: 4s;
+  }
+
+
+  @-webkit-keyframes example {
+      0%   {left:0px; top:0px;}
+      25%  {left:0px; top:0px;}
+      50%  {left:0px; top:0px;}
+      75%  {left:0px; top:0px;}
+      100% {left:0px; top:450px;}
+  }*/
 
 .pieces {
-  display: grid;
+  display: inline;
 }
+
+.bigPiece {
+  width: 150px;
+  height: 150px
+}
+
+/*h1 {
+  z-index: 6;
+  text-align: center;
+  font-size: 100px;
+  position: absolute;
+  left: 525px;
+  font-family: 'Acme', sans-serif;
+}*/

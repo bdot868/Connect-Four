@@ -8,7 +8,7 @@ var pieces = [
   {marker: '<img src="red piece.jpg" alt="">', color: 'Red'},
   {marker: '<img src="black piece.jpg">', color: 'Black'}
 ]
-var player1, player2;
+var $body = $('body')
 
 gameDefault()
 /*I want to allow the first user to pick their color of choice & and make the
@@ -20,6 +20,7 @@ function gameStart(){
   alert('Player 1 please select your color');
   red.on('click', function(){
     currentPlayer = pieces[0]
+    $(this).toggleClass('.bigPiece')
     //player1 = pieces[0].color
     //player2 = pieces[1].color
   })
@@ -93,7 +94,7 @@ function gameDefault(){
                  if((destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+7].innerHTML == currentPlayer.marker && destinationBox[i+14].innerHTML == currentPlayer.marker && destinationBox[i+21].innerHTML == currentPlayer.marker) ||
                     (destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+8].innerHTML == currentPlayer.marker && destinationBox[i+16].innerHTML == currentPlayer.marker && destinationBox[i+24].innerHTML == currentPlayer.marker) ||
                     (destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+6].innerHTML == currentPlayer.marker && destinationBox[i+12].innerHTML == currentPlayer.marker && destinationBox[i+18].innerHTML == currentPlayer.marker)){
-                      console.log('it had to come to this ' + currentPlayer.color + 'wins diagonal or vertical')
+                      winnerIs()
 
                    }
                  } else if(i >= 2 & i <= 40){
@@ -122,3 +123,7 @@ function gameDefault(){
    //Create logic for displaying who won on the screen
 
    //create verticle win, diagonal win, horizontal win
+function winnerIs(){
+  var winner = $('<h1>' + currentPlayer.color + ' Wins!</h1>').css({'color': currentPlayer.color, 'font-size': '100px', 'z-index': 100, 'left': '288px', 'position': 'absolute', 'margin-bottom': '400px', 'bottom': 0})
+  $('.container').append(winner)
+}
