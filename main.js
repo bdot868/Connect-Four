@@ -19,14 +19,10 @@ function gameStart(){
   alert('Player 1 please select your color');
   red.on('click', function(){
     currentPlayer = pieces[0]
-    $(this).toggleClass('.bigPiece')
-    //player1 = pieces[0].color
-    //player2 = pieces[1].color
+
   })
   black.on('click', function(){
     currentPlayer = pieces[1]
-    //player1 = pieces[1].color
-    //player2 = pieces[0].color
   })
   gamePlay()
 }
@@ -38,6 +34,7 @@ function gameQuit() {
 
 }
 
+//function to create empty game
 function gameDefault(){
   for (var i = 0; i < destinationBox.length; i++) {
     destinationBox[i].innerHTML = ''
@@ -50,8 +47,7 @@ function gameDefault(){
 //alert(currentPlayer + ' make your move!')
 
 //var currentPlayer = userPick;
-/* upon starting the game I want to randomize who gets to go first,
-   and prompt them to make a move*/
+
 
 
 
@@ -59,22 +55,29 @@ function gameDefault(){
    board and then drop down into the respective div that was clicked by each
    player */
 
-   function gamePlay(){
-     destinationBox.on('click', function(){
-       $(this).html(currentPlayer.marker)
-       checkWinner()
-     })
-    //  destinationBox.on('click', winnerIs)
-
-
-    //   for (var i = 0; i < destinationBox.length; i++) {
-    //    destinationBox[i].addEventListener('click', function(){
-    //      this.innerHTML = currentPlayer
-    //    })
-    //    destinationBox[i].addEventListener('click', winnerIs)
-    // }
+   function dropAtLastEmpty(index){
+     // are we at a row where there even is a next row? And, if so, does the next row have a populated circle?
+     if(!destinationBox[index].innerHTML){
+       if(index < destinationBox.length - 7 && !destinationBox[index + 7].innerHTML){
+         dropAtLastEmpty(index + 7)
+       } else {
+         destinationBox[index].innerHTML = currentPlayer.marker
+       }
+     }
    }
 
+
+   function gamePlay(){
+     destinationBox.on('click', function(){
+       // the index of the box we just clicked
+       var index = destinationBox.index(this)
+       dropAtLastEmpty(index)
+       red.off()
+       black.off()
+       checkWinner()
+     })
+   }
+console.log(destinationBox)
    //I will create functions to toggle between the players to alternate turns
    function switchTurns(){
      if(currentPlayer == pieces[0]){
@@ -122,14 +125,14 @@ function gameDefault(){
 
    //create verticle win, diagonal win, horizontal win
 function winnerIs(){
-  var winner = $('<h1>' + currentPlayer.color + ' Wins!</h1>').css({'color': currentPlayer.color, 'font-size': '100px', 'z-index': 100, 'left': '288px', 'position': 'absolute', 'margin-bottom': '400px', 'bottom': 0})
+  var winner = $('<h2>' + currentPlayer.color + ' Wins!</h2>').css({'color': currentPlayer.color, 'font-size': '150px', 'z-index': 100, 'left': '360px', 'position': 'absolute', 'margin-bottom': '300px', 'bottom': 0})
   $('body').append(winner)
   $('.board').css('opacity', '.5')
   destinationBox.off()
   var playAgain = setInterval(function(){
     if(window.confirm('Would you like to Play Again?')){
       destinationBox.empty()
-      $('h1').empty()
+      $('h2').empty()
       $('.board').css('opacity', '1')
       switchTurns()
       gamePlay()
