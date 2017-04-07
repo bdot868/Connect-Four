@@ -6,6 +6,9 @@ var red = $('.red')
 var black = $('.black')
 var currentPlayer = null;
 
+var chipSound = new Audio("https://0.s3.envato.com/files/193203869/preview.mp3")
+var winningSound = new Audio("https://0.s3.envato.com/files/221646418/preview.mp3")
+
 var counter = 0;
 
 var pieces = [
@@ -75,8 +78,8 @@ function gameDefault(){
    function gamePlay(){
      start.fadeOut()
      playerIs()
-     $('.black').draggable()
      destinationBox.on('click', function(){
+       chipSound.play()
        // the index of the box we just clicked
        var index = destinationBox.index(this)
        dropAtLastEmpty(index)
@@ -181,6 +184,7 @@ function winnerIs(who){
   $('body').append(winner)
   $('.board').css('opacity', '.5')
   destinationBox.off()
+  winningSound.play()
   var playAgain = setInterval(function(){
     if(window.confirm('Would you like to Play Again?')){
       destinationBox.empty()
