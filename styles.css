@@ -35,6 +35,17 @@ span {
   position: relative;
 }
 
+#player {
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  background: white;
+  margin: 20px 0 0 15px;
+  text-align: center;
+  text-decoration: underline;
+  float: left;
+}
+
 .container {
   margin: auto;
   max-height: 750px;
@@ -65,45 +76,17 @@ span {
 div img {
   width: 100px;
   border-radius: 110px;
-  /*iteration-count | direction | fill-mode | play-state | name
-  animation: 3s ease-in 1s 2 reverse both paused slidein;
-
-  /* @keyframes duration | timing-function | delay | name */
-  /*animation: 3s linear 1s slidein;
-
-  /* @keyframes duration | name */
-  /*animation: 3s slidein;*/
-    /*  background-color: red;
-      position: relative;
-      -webkit-animation-name: example; /*
-      -webkit-animation-duration: 4s;
-      animation-name: example;
-      animation-duration: 4s;
-  }
-
-
-  @-webkit-keyframes example {
-      0%   {left:0px; top:0px;}
-      25%  {left:0px; top:0px;}
-      50%  {left:0px; top:0px;}
-      75%  {left:0px; top:0px;}
-      100% {left:0px; top:450px;}
-  }*/
+}
 
 .pieces {
   display: inline;
+  background: yellow;
 }
 
-.bigPiece {
-  width: 150px;
-  height: 150px
-}
 
-/*h1 {
-  z-index: 6;
-  text-align: center;
-  font-size: 100px;
-  position: absolute;
-  left: 525px;
-  font-family: 'Acme', sans-serif;
-}*/
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .container {
+        width: 100%;
+    }
+}
