@@ -9,7 +9,7 @@ Captain's Mistress is a 2 player game where each player takes turns choosing an 
 ##### How to play:
 Player one chooses a color and player 2 automatically gets the 2nd color. They both take turns selecting columns to drop their piece to the bottom most empty space and work their way up while trying to get four of their own piece in a row vertically, horizontally or diagonally, to win the game, at the same time preventing the other player from doing the same. First player to get 4 in a row wins. If no player gets 4 in a row then the game is a draw.
 
-Play Captain's Mistress here: [https://bdot868.github.io/Connect-Four/]()
+Play Captain's Mistress here: [https://bdot868.github.io/Connect-Four/index.html]()
 
 ---
 
