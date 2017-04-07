@@ -3,7 +3,7 @@
 ![Connect Four screenshot](CaptainsMistress.png)
 
 ###Summary
-Captain's Mistress is a 2 player game where each player takes turns choosing an empty space to place their color piece in an attempt to get 4 pieces in a row while stopping the other player from doing the same. You may know this game by its common american name of "Connect Four".
+Captain's Mistress is a 2 player game where each player takes turns choosing an empty space to place their color piece in an attempt to get 4 pieces in a row while stopping the other player from doing the same. You may know this game by its common American name of "Connect Four".
 
 
 #####How to play:
@@ -29,15 +29,14 @@ User Stories
 
 ---
 
-MVP
-
----
-
 ###Unsolved Problems
+
+* I wanted to make pieces draggable and droppable
+* I wanted to create more animation upon winning
+* I wanted to make game auto adjust size when screen gets smaller
 
 ---
 
 ###Credits
 
 "Rajon Rondo" for being a wonderful game model!
-
