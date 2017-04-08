@@ -127,49 +127,57 @@ counter++;
      for (var i = 0; i < destinationBox.length; i++) {
           if(destinationBox[i].innerHTML !== ''){
             if(i >= 0 && i <= 20){
+                console.log('I am inside under vert & diag')
                  if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+7].innerHTML == currentPlayer.marker && destinationBox[i+14].innerHTML == currentPlayer.marker && destinationBox[i+21].innerHTML == currentPlayer.marker){
                    winnerIs(currentPlayer.color)
                    console.log('vertical win')
-                   break;
+                   //break;
                  }
                      else if( (i >= 0  && i <= 3) || (i >= 7  && i <= 10) || (i >= 14  && i <= 17) || (i >= 21  && i <= 24) || (i >= 28  && i <= 31) || (i >= 35  && i <= 38) ){
                       if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+8].innerHTML == currentPlayer.marker && destinationBox[i+16].innerHTML == currentPlayer.marker && destinationBox[i+24].innerHTML == currentPlayer.marker){
                         winnerIs(currentPlayer.color)
-                        console.log('diagonal win')
-                        break;
+                        console.log('diagonal win by 8')
+                        //break;
                       }
+                      else if( (i >= 3  && i <= 6) || (i >= 10  && i <= 13) || (i >= 17  && i <= 20) || (i >= 24  && i <= 27) || (i >= 31  && i <= 34) || (i >= 38  && i <= 41) ){
+                            if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+6].innerHTML == currentPlayer.marker && destinationBox[i+12].innerHTML == currentPlayer.marker && destinationBox[i+18].innerHTML == currentPlayer.marker){
+                            winnerIs(currentPlayer.color)
+                            console.log('diagonal win by 6')
+                            //break;
+                         }
+                       }
                     }
-                    else if( (i >= 3  && i <= 6) || (i >= 10  && i <= 13) || (i >= 17  && i <= 20) || (i >= 24  && i <= 27) || (i >= 31  && i <= 34) || (i >= 38  && i <= 41) ){
-                      if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+6].innerHTML == currentPlayer.marker && destinationBox[i+12].innerHTML == currentPlayer.marker && destinationBox[i+18].innerHTML == currentPlayer.marker){
-                      winnerIs(currentPlayer.color)
-                      console.log('diagonal win')
-                      break;
-                   }
-                 }
-                 }
+                //     else if( (i >= 3  && i <= 6) || (i >= 10  && i <= 13) || (i >= 17  && i <= 20) || (i >= 24  && i <= 27) || (i >= 31  && i <= 34) || (i >= 38  && i <= 41) ){
+                //       if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+6].innerHTML == currentPlayer.marker && destinationBox[i+12].innerHTML == currentPlayer.marker && destinationBox[i+18].innerHTML == currentPlayer.marker){
+                //       winnerIs(currentPlayer.color)
+                //       console.log('diagonal win by 6')
+                //       //break;
+                //    }
+                //  }
+            }
                  else if((i >= 2  && i <= 5) || (i >= 9  && i <= 12) || (i >= 16  && i <= 19) || (i >= 23  && i <= 26) || (i >= 30  && i <= 33) || (i >= 37  && i <= 40)){
                      if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i-1].innerHTML == currentPlayer.marker && destinationBox[i-2].innerHTML == currentPlayer.marker && destinationBox[i+1].innerHTML == currentPlayer.marker){
                        winnerIs(currentPlayer.color)
                        console.log('horizontal 2 down 1 up')
-                       break;
+                       //break;
                      }
                  } else if((i >= 1  && i <= 4) || (i >= 8  && i <= 11) || (i >= 15  && i <= 18) || (i >= 22  && i <= 25) || (i >= 30  && i <= 32) || (i >= 36  && i <= 39)){
                      if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+1].innerHTML == currentPlayer.marker && destinationBox[i+2].innerHTML == currentPlayer.marker && destinationBox[i-1].innerHTML == currentPlayer.marker){
                        winnerIs(currentPlayer.color)
                        console.log('horizontal 1 down 2 up')
-                       break;
+                       //break;
                      }
                  } else if((i >= 0  && i <= 3) || (i >= 7  && i <= 10) || (i >= 14  && i <= 17) || (i >= 21  && i <= 24) || (i >= 28  && i <= 31) || (i >= 35  && i <= 38)){
                      if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i+1].innerHTML == currentPlayer.marker && destinationBox[i+2].innerHTML == currentPlayer.marker && destinationBox[i+3].innerHTML == currentPlayer.marker){
                       winnerIs(currentPlayer.color)
                       console.log('horizontal win adding up')
-                      break;
+                      //break;
                      }
                  } else if((i >= 3  && i <= 6) || (i >= 10  && i <= 13) || (i >= 17  && i <= 20) || (i >= 24  && i <= 27) || (i >= 31  && i <= 34) || (i >= 38  && i <= 41)){
               if(destinationBox[i].innerHTML == currentPlayer.marker && destinationBox[i-1].innerHTML == currentPlayer.marker && destinationBox[i-2].innerHTML == currentPlayer.marker && destinationBox[i-3].innerHTML == currentPlayer.marker){
                   winnerIs(currentPlayer.color)
                   console.log('horizontal win subtracting')
-                  break;
+                  //break;
                 }
               }
             }
