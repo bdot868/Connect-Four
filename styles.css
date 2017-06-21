@@ -93,6 +93,9 @@ div img {
     header {
       width: 80%;
     }
+    .pieces {
+      margin-top: 20px !important;
+    }
     /*header {
       width: 100%;
     }
