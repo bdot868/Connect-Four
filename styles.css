@@ -86,11 +86,11 @@ div img {
 
 @media only screen and (max-width: 480px) {
     /* For mobile phones: */
-  }
-    /*body {
+
+    body {
         width: 100%;
     }
-    header {
+    /*header {
       width: 100%;
     }
     .board {
@@ -98,7 +98,7 @@ div img {
     }
     .container {
       width: 100%;
-    }
+    }*/
 }
 
 /*@media (max-width: 500px) {
