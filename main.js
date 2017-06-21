@@ -58,6 +58,7 @@ function gameDefault(){
   }
   start.fadeIn()
   destinationBox.off()
+  counter = 0;
 
 }
    /* Create jquery functions to move the pieces across each column and then drop down into the bottom most empty circle that was clicked by each
@@ -90,6 +91,7 @@ function gameDefault(){
    }
    //create functions to toggle between the players to alternate turns
    function switchTurns(){
+     counter++;
      if(currentPlayer == pieces[0]){
        currentPlayer = pieces[1];
      } else {
@@ -109,7 +111,7 @@ function playerIs(){
 
 
 function isDraw(){
-counter++;
+
   console.log('counter')
    if(destinationBox.length === counter) {
 
@@ -193,6 +195,7 @@ function winnerIs(who){
   $('.board').css('opacity', '.5')
   destinationBox.off()
   winningSound.play()
+  counter = 0
   var playAgain = setInterval(function(){
     if(window.confirm('Would you like to Play Again?')){
       destinationBox.empty()
