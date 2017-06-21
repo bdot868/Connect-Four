@@ -89,11 +89,11 @@ div img {
     .container {
         width: 100%;
     }
-    .pieces {
-      display: inline-block;
-    }
-    div.cur-player {
-      background: green;
+    #start, #stop {
+      width: 150px;
+      height: 40px;
+      margin: 20px;
+
     }
 
 }
