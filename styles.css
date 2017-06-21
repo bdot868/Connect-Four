@@ -92,7 +92,7 @@ div img {
     .pieces {
       display: inline-block;
     }
-    .cur-player {
+    div.cur-player {
       background: green;
     }
 
