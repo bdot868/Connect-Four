@@ -84,9 +84,9 @@ div img {
 }
 
 
-@media only screen and (max-width: 480px) {
+/*@media only screen and (max-width: 480px) {
     /* For mobile phones: */
-    body {
+    /*body {
         width: 100%;
     }
     header {
@@ -98,10 +98,21 @@ div img {
     .container {
       width: 100%;
     }
-}
+}*/
 
-@media (max-width: 700px) {
-
+@media (max-width: 500px) {
+  body {
+      width: 100%;
+  }
+  header {
+    width: 100%;
+  }
+  .board {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
   .pieces {
     display: inline-block;
   }
