@@ -93,9 +93,7 @@ div img {
       display: inline-block;
     }
     .cur-player {
-      position: static;
-      margin-left: 300px;
-      vertical-align: top;
+      background: green;
     }
 
 }
