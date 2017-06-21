@@ -90,19 +90,25 @@ div img {
         width: 100%;
     }
     .cur-player {
-      background-color:  teal !important;
+      background-color: teal !important;
+      color: white !important;
+      font-size: 16px !important;
+      margin-left: 300px !important;
+      top: 20px !important;
+      border-radius: 10px;
     }
-
 }
 
 @media (max-width: 700px) {
-  #start, #stop {
-    width: 150px;
-    height: 40px;
-    margin: 10px;
-
+  .pieces {
+    display: inline-block;
   }
   .cur-player {
-    background-color:  teal !important;
+    background-color: teal !important;
+    color: white !important;
+    font-size: 16px !important;
+    margin-left: 300px !important;
+    top: 20px !important;
+    border-radius: 10px;
   }
 }
