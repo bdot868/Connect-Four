@@ -89,11 +89,13 @@ div img {
     .container {
         width: 100%;
     }
-    .cur-player {
-      float: right;
-      vertical-align: top;
-    }
     .pieces {
       display: inline-block;
     }
+    .cur-player {
+      position: static;
+      margin-left: 300px;
+      vertical-align: top;
+    }
+
 }
