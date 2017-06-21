@@ -104,7 +104,7 @@ function gameDefault(){
 
 function playerIs(){
 
-  var player = $('<div class="cur-player">Current Player<p>' + currentPlayer.color +'</p></div>').css({'text-align': 'center','color': 'black', 'position': 'absolute', 'height': '60px', 'width': '120px', 'background': 'white', 'top': '300px', 'margin': '0 5px'})
+  var player = $('<div class="cur-player">Current Player<p>' + currentPlayer.color +'</p></div>').css({'text-align': 'center','color': 'black', 'height': '60px', 'width': '120px', 'background': 'white', 'top': '300px', 'margin': '0 5px'})
   $('.pieces-box').append(player)
 
 }
